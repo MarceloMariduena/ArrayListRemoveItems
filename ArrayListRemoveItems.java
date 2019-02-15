@@ -49,28 +49,12 @@ public class ArrayListRemoveItems {
   public static ArrayList<Integer> removeItems(ArrayList<Integer> alSource, ArrayList<Integer> alElements) {
     ArrayList<Integer> alResult = new ArrayList<Integer>();
     
-    // Removes desired integers
-    for (int i : alSource){
-      if (alElements.contains(i)){
-        continue;
-      }
-      else {
-        alResult.add(i);
-      }
+    for (int i = 0; i < alSource.size(); i++) {
+    	if ( !alResult.contains(alSource.get(i)) && !alElements.contains(alSource.get(i)) ) {
+    		alResult.add(alSource.get(i));
+    	}
     }
     
-    ArrayList<Integer> noRepeats = new ArrayList<Integer>();
-    
-    // Removes repeats
-    for (int i : alResult) {
-      if (noRepeats.contains(i)){
-        continue;
-      }
-      else {
-        noRepeats.add(i);
-      }
-    }
-    
-    return noRepeats;
+    return alResult;
   }
 }
